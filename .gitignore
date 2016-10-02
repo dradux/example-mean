@@ -1,0 +1,10 @@
+# docker-compose environment variables file.
+.env
+# node packages
+/node_modules/*
+npm-debug.log
+# temp files
+/tmp/*
+.~lock*
+# log files
+/logs/*
