@@ -2,6 +2,9 @@
 
 This is an example ToDo app build on the MEAN stack and fully dockerized.
 
+## Notice
+The `develop` branch has a freelunch.yml file created for you!
+
 ## Quick Start
 - install dependencies
   * docker
