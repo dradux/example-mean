@@ -24,7 +24,7 @@ outputs:
 #  - type: ecr
 #    image: FreeLunchCI/example-mean
 #    registry: 703587889398.dkr.ecr.us-east-1.amazonaws.com
-#    repository: example-mean
+#    repository: example-mean   #note: this repository must exist in your registry
 #    #user: ecr_user
 #    #token: this value is stored/retrieved from the "secure store"
 
