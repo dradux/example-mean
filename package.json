@@ -1,8 +1,8 @@
 {
-  "name"         : "example-mean",
-  "version"      : "1.0.0",
-  "description"  : "A simple todo app",
-  "main"         : "server.js",
+  "name": "example-mean",
+  "version": "1.0.0",
+  "description": "A simple todo app",
+  "main": "server.js",
   "keywords": [
     "flci",
     "example",
@@ -12,12 +12,17 @@
     "angularJS",
     "node.js"
   ],
-  "author"       : "drad",
-  "dependencies" : {
-    "express"    : "~4.13.2",
-    "mongoose"   : "~3.6.2",
-    "morgan"     : "~1.6.1",
+  "author": "drad",
+  "dependencies": {
+    "express": "~4.13.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.6.1",
     "body-parser": "~1.14.1",
     "method-override": "~2.3.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chance": "^1.0.4",
+    "mocha": "^3.1.2"
   }
 }

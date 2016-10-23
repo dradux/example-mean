@@ -14,7 +14,8 @@
         html                    { overflow-y:scroll; }
         body                    { padding-top:13px; }
         #todo-list              { margin-bottom:13px; }
-        #version-bar            { text-align: right; font-style: italic; }
+        #appver                 { position: absolute; top: 0px; right: 0px; padding: 4px; font-size: 10px; line-height: 10px; border-bottom: 1px solid #BFBFBF; color: #4D4D4D; }
+}
     </style>
 
     <!-- SPELLS -->
@@ -67,9 +68,9 @@
         </div>
 
         <!-- FLCI USAGE -->
-        <div id="version-bar">
+        <div id="appver">
             <script>
-                document.write('v' + appversion);
+                document.write('[' + appversion + ']');
             </script>
         </div>
     </div>
