@@ -5,6 +5,11 @@ This is an example todo app. The app was built as an example/reference applicati
 This app is dockerized and will be kubernetized and freelunchized ;-)
 
 
+## Stack
+* web:   node:6.6.0-slim (express, mongoose)
+* db:    mongo:3.3
+
+
 ## Notices
 * this app is not intended to be a production ready app or the base for a production app, its purpose is for example/demonstration usage only.
 * the `develop` branch has a freelunch.yml file created for you.
