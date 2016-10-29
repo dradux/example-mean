@@ -37,12 +37,10 @@ This app is dockerized and will be kubernetized and freelunchized ;-)
 * `Ctrl+C` if app is launched interactively or use `docker-componse kill` if launched as daemon (`-d`)
 
 
-## FLCI Testing
-* if you would like to change something in the app to cause a flci build you can update the app's version (public/js/core.js > appversion).
-
-
-## Tests
+## Test
 * `docker-compose run -e "NODE_ENV=test" web /usr/src/app/node_modules/mocha/bin/mocha test/unit/*`
+* for FLCI testing, increment the app's version and push to invoke a new build
+  - application version: `appversion in /public/js/core.js`
 
 
 ## Other Means of Using App
@@ -51,4 +49,4 @@ This app is dockerized and will be kubernetized and freelunchized ;-)
 
 
 ## Attribution
-this app came, in large part, from the ToDoAngular example app from [epic-math's NodeJS-MEAN](https://github.com/epic-math/NodeJS-MEAN)
+This app came, in large part, from the ToDoAngular example app from [epic-math's NodeJS-MEAN](https://github.com/epic-math/NodeJS-MEAN)
