@@ -18,7 +18,7 @@ spec:
       containers:
       - name: example-mean-todo
         imagePullPolicy: Always
-        image: 703587889398.dkr.ecr.us-east-1.amazonaws.com/example-mean-todo:latestapp
+        image: 703587889398.dkr.ecr.us-east-1.amazonaws.com/example-mean-todo:latest
         ports:
         - name: appport
           containerPort: 27017
