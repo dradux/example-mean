@@ -1,5 +1,5 @@
 ---
-# example comment used to trigger builds: v8.
+# example comment used to trigger builds: v0.
 builds:
   docker_image_name: FreeLunchCI/example-mean-todo
 
@@ -12,7 +12,7 @@ outputs:
     ecr_key: ${aws_access_key_id}
     ecr_secret: ${aws_secret_access_key}
     region: us-east-1
-    tag: latest
+    tag: base
 
   - type: kube
     server: https://50.16.94.175
