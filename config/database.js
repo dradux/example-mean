@@ -2,5 +2,5 @@
 
 module.exports = {
     //url : 'mongodb://db/'
-    url : 'mongodb://example-mean-todo-db/'
+    url : 'mongodb://example-mean-todo-db-elb/'
 };
