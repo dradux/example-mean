@@ -1,5 +1,5 @@
 ---
-# example comment used to trigger builds: v2.
+# example comment used to trigger builds: v3.
 builds:
   docker_image_name: FreeLunchCI/example-mean-todo
 
