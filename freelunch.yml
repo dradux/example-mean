@@ -1,39 +1,33 @@
 ---
 
 builds:
-  docker_image_name: FreeLunchCI/example-mean
-
-services:
-  db:
-  image: mongo:3.3
-  ports:
-   - "27017:27017"
-web:
-  build: .
-  command: python -u run.py
-  ports:
-    - "3333:3333"
-    - "35729:35729"
-links:
-  - db
-volumes:
-  - "./app:/src/app"
+  docker_image_name: FreeLunchCI/example-mean-todo
 
 outputs:
 
   - type: ecr
-    image: FreeLunchCI/example-mean
+    image: FreeLunchCI/example-mean-todo
     registry: 703587889398.dkr.ecr.us-east-1.amazonaws.com
-    repository: example-mean
+    repository: example-mean-todo
+    ecr_key: ${aws_access_key_id}
+    ecr_secret: ${aws_secret_access_key}
+    region: us-east-1
+    tag: latestapp
 
-#  - type: kube
-#    server: https://50.16.94.175
-#    user: aws_kubernetes
-#    #token: this value is stored/retrieved from the "secure store"
-#    #client_certificate: this value is stored/retrieved from the "secure store"
-#
-#    kube_selector: app=example-mean
-#    kube_deploy_registry: 703587889398.dkr.ecr.us-east-1.amazonaws.com   # this should match the registry you deploy your image to (e.g. ecr.registry)
-#    kube_deploy_repository: example-mean   # this should match the repository within the registry that you deploy your image to (e.g. ecr.repository)
-#    kube_rc_path: k8s/example-mean-rc.yml
-#    kube_dir: k8s
+  - type: kube
+    server: https://50.16.94.175
+    token_user: aws_kubernetes
+    token: ${kube_token}
+    client_key: ${kube_client_certificate}
+    certificate_authority: ${kube_client_certificate}
+    current_context: aws_kubernetes
+    cluster_name: aws_kubernetes
+    #kube_api_version: v1   # If not provided the engine defaults to v1
+
+    #kube_config_path: ~/.kube/config   #used for config based auth. MUST be relative to the  ROOT of repo dir
+    kube_selector: app=example-mean-todo
+    kube_rc_name: example-mean-todo-green   # This MUST match with the name of the rc you are going to create. Refer to your k8s/*-rc.yml file for it.
+    kube_deploy_registry: 703587889398.dkr.ecr.us-east-1.amazonaws.com   # this should match the registry you deploy your image to (e.g. ecr.registry)
+    kube_deploy_repository: example-mean-todo   # this should match the repository within the registry that you deploy your image to (e.g. ecr.repository)
+    kube_rc_path: k8s/example-mean-todo-rc.yml # MUST be relative to the repo ROOT
+    kube_dir: k8s
