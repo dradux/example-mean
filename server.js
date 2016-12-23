@@ -12,10 +12,14 @@
 
 
     // configuration ===============================================================
+    console.log("* attempting database connection to: " + database.url);
     mongoose.connect(database.url, function(err) {                  // connect to mongoDB database
         if (err) {
             console.log("DBCONN ERR: Error connecting to database!");
-        });
+        } else {
+            console.log("DBCONN ok");
+        );
+    //mongoose.connect( 'mongodb://localhost/library_database', function(err) { if (err) console.log(err); } );
     // If the connection throws an error
     mongoose.connection.on('error', function (err) {
       console.log('Mongoose default connection error: ' + err);
