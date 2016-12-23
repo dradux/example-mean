@@ -12,7 +12,7 @@
 
 
     // configuration ===============================================================
-    console.log("### TEST A ###");
+    console.log("### TEST B ###");
     console.log("* attempting database connection to: " + database.url);
     mongoose.connect(database.url, function(err) {                  // connect to mongoDB database
         if (err) {
