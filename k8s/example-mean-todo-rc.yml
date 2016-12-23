@@ -22,3 +22,8 @@ spec:
         ports:
         - name: appport
           containerPort: 3333
+        env:
+        - name: APP_DB_HOST
+          value: example-mean-todo-db
+        - name: APP_DB_PORT
+          value: 27017
