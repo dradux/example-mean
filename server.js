@@ -18,7 +18,8 @@
             console.log("DBCONN ERR-01: Error connecting to database!");
         } else {
             console.log("DBCONN ok");
-        );
+        }
+    });
     // If the connection throws an error
     mongoose.connection.on('error', function (err) {
       console.log('DBCONN ERR-02: Default db connection error: ' + err);
