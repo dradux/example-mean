@@ -13,6 +13,7 @@
 
     // configuration ===============================================================
     console.log("* attempting database connection to: " + database.url);
+    /*
     mongoose.connect(database.url, function(err) {                  // connect to mongoDB database
         if (err) {
             console.log("DBCONN ERR: Error connecting to database!");
@@ -31,6 +32,7 @@
         process.exit(0);
       });
     });
+    */
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
@@ -44,6 +46,6 @@
 
     // listen (start app with node server.js) ======================================
     app.listen(port);
-    console.log("App listening on port : " + port);
+    console.log("App listening on port: " + port);
 
 
