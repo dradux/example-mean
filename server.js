@@ -16,6 +16,17 @@
         if (err) {
             console.log("DBCONN ERR: Error connecting to database!");
         });
+    // If the connection throws an error
+    mongoose.connection.on('error', function (err) {
+      console.log('Mongoose default connection error: ' + err);
+    });
+    // If the Node process ends, close the Mongoose connection
+    process.on('SIGINT', function() {
+      mongoose.connection.close(function () {
+        console.log('Mongoose default connection disconnected through app termination');
+        process.exit(0);
+      });
+    });
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
