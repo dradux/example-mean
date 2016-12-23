@@ -14,7 +14,7 @@
     // configuration ===============================================================
     mongoose.connect(database.url, function(err) {                  // connect to mongoDB database
         if (err) {
-            console.log("DBCONN ERROR: Error connecting to database!");
+            console.log("DBCONN ERR: Error connecting to database!");
         });
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
