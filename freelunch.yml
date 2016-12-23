@@ -26,7 +26,7 @@ outputs:
 
     #kube_config_path: ~/.kube/config   #used for config based auth. MUST be relative to the  ROOT of repo dir
     kube_selector: app=example-mean-todo
-    kube_rc_name: example-mean-todo-green   # This MUST match with the name of the rc you are going to create. Refer to your k8s/*-rc.yml file for it.
+    kube_rc_name: example-mean-todo   # This MUST match with the name of the rc you are going to create. Refer to your k8s/*-rc.yml file for it.
     kube_deploy_registry: 703587889398.dkr.ecr.us-east-1.amazonaws.com   # this should match the registry you deploy your image to (e.g. ecr.registry)
     kube_deploy_repository: example-mean-todo   # this should match the repository within the registry that you deploy your image to (e.g. ecr.repository)
     kube_rc_path: k8s/example-mean-todo-rc.yml # MUST be relative to the repo ROOT
