@@ -19,15 +19,14 @@
         } else {
             console.log("DBCONN ok");
         );
-    //mongoose.connect( 'mongodb://localhost/library_database', function(err) { if (err) console.log(err); } );
     // If the connection throws an error
     mongoose.connection.on('error', function (err) {
-      console.log('DBCONN ERR-02: Default connection error: ' + err);
+      console.log('DBCONN ERR-02: Default db connection error: ' + err);
     });
-    // If the Node process ends, close the Mongoose connection
+    // If the Node process ends, close the db connection
     process.on('SIGINT', function() {
       mongoose.connection.close(function () {
-        console.log('DBCONN ERR-03: Default connection disconnected through app termination');
+        console.log('DBCONN ERR-03: Default db connection disconnected through app termination');
         process.exit(0);
       });
     });
