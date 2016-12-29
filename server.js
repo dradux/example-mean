@@ -12,7 +12,26 @@
 
 
     // configuration ===============================================================
-    mongoose.connect(database.url);     // connect to mongoDB database on modulus.io
+    console.log("### TEST C ###");
+    console.log("* attempting database connection to: " + database.url);
+    mongoose.connect(database.url, function(err) {                  // connect to mongoDB database
+        if (err) {
+            console.log("DBCONN ERR-01: Error connecting to database!");
+        } else {
+            console.log("DBCONN ok");
+        }
+    });
+    // If the connection throws an error
+    mongoose.connection.on('error', function (err) {
+      console.log('DBCONN ERR-02: Default db connection error: ' + err);
+    });
+    // If the Node process ends, close the db connection
+    process.on('SIGINT', function() {
+      mongoose.connection.close(function () {
+        console.log('DBCONN ERR-03: Default db connection disconnected through app termination');
+        process.exit(0);
+      });
+    });
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
@@ -26,6 +45,6 @@
 
     // listen (start app with node server.js) ======================================
     app.listen(port);
-    console.log("App listening on port : " + port);
+    console.log("App listening on port: " + port);
 
 
